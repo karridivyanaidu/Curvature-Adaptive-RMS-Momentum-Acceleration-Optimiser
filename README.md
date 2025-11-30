@@ -1,5 +1,5 @@
 # Curvature-Adaptive-RMS-Momentum-Acceleration-Optimiser
-Optimisation project.
+Curvature Adaptive RMS Momentum Acceleration Optimiser
 
 CARMA is an optimization algorithm designed to combine the strengths of Nesterov's accelerated gradient, curvature-adaptive momentum, and RMS scaling.
 It provides fast convergence in smooth regions, stability in sharp or curved regions.
