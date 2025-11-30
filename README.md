@@ -5,6 +5,7 @@ CARMA is an optimization algorithm designed to combine the strengths of Nesterov
 It provides fast convergence in smooth regions, stability in sharp or curved regions.
 
 Introduction
+
 Modern optimization methods face a trade-off where they have to choose between traversal of flat landscapes and stable behaviour in high-curvature regions. Optimizers such as Nesterov Accelerated Gradient improve convergence speed by utilising look-ahead updates, but their momentum coefficient is usually static. RMSProp stabilizes training by normalizing the gradients using a running estimate of their second moment. However, it also lacks curvature awareness and might oscillate in regions where the gradient direction changes rapidly.
 To address these limitations, CARMA introduces a new mechanism that regulates momentum using curvature feedback - derived from differences between consecutive gradients. This allows our optimizer to slow down before steep cliffs and speed up when entering broad valleys.
 
@@ -39,11 +40,11 @@ CARMA Algorithm:
 
   Notations
   
-xt : parameters at iteration t
-yt : Nesterov lookahead point
-gt : gradient at the look-ahead
-vt : momentum
-st : RMS Term
+xt : parameters at iteration t, 
+yt : Nesterov lookahead point, 
+gt : gradient at the look-ahead, 
+vt : momentum, 
+st : RMS Term, 
 κₜ : Curvature signal
 
 Algorithm Code: 
