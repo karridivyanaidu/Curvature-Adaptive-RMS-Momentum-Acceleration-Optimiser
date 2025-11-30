@@ -9,6 +9,7 @@ Modern optimization methods face a trade-off where they have to choose between t
 To address these limitations, CARMA introduces a new mechanism that regulates momentum using curvature feedback - derived from differences between consecutive gradients. This allows our optimizer to slow down before steep cliffs and speed up when entering broad valleys.
 
 Key Innovations
+
 1. Curvature-Aware Momentum
 Based on the gradient curvature, our optimizer adapts the momentum coefficient β. Momentum decreases in high curvature regions to prevent overshooting, and increases in flatter regions to accelerate progress.
 2. RMS-Stabilized Velocity Updates
@@ -17,6 +18,7 @@ Instead of moment estimates like Adam, CARMA normalizes the momentum using an RM
 When the gradient direction changes rapidly, CARMA automatically reduces the effective momentum.This acts like a soft reset mechanism that helps in avoiding oscillation around valleys and saddle points.
 
 Inspiration and Development
+
 The idea of CARMA emerged from observing Nesterov Accelerated Gradient (NAG). Despite the lookahead mechanism, NAG still struggles in regions where the curvature changes rapidly. The fixed momentum in NAG, helps accelerate movement across flat regions, but in steep or highly curved sections it can lead to overshooting and instability. Additionally, NAG applies the same update scale across all coordinates, which makes it sensitive to variations in gradient magnitude.Incorporating adaptive momentum based on curvature helps moderate the update speed in steep regions while maintaining acceleration in flat areas. And RMS Scaling would normalize high-variance direction, smoothening noisy gradients. Initial experiments on simple quadratic functions validated this hypothesis, leading to the development of the full algorithm.
 
 Mathematical Updates: 
