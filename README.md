@@ -96,3 +96,5 @@ Default hyperparameter values:
 - ρ (RMS decay rate): 0.99
 - αc (curvature sensitivity): 0.3
 - gradient clipping threshold: 50.0
+
+The attached CARMA code file has the CARMA optimiser compared with SGD+Momentum, ADAM, RMS Prop in function like Well Quadratic, Ill Quadratic, Rosenbrock and MNIST.
