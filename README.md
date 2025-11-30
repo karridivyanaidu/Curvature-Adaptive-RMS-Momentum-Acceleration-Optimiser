@@ -38,6 +38,7 @@ CARMA Algorithm:
     xₜ = xₜ₋₁ - η · vₜ / (√sₜ + ε)     // Parameter update
 
   Notations
+  
 xt : parameters at iteration t
 yt : Nesterov lookahead point
 gt : gradient at the look-ahead
